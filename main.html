@@ -1,0 +1,339 @@
+<html>
+  <head>
+    <title>Moonton Account Rebind Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+      /* Mengatur tampilan body dengan background biru gradasi ungu-hitam */
+      body {
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #1e2a47, #4b2e83, #6a3b8b); /* Gradasi biru ke ungu-hitam */
+        color: white;
+      }
+
+      /* Container putih dengan shadow futuristik */
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .form-wrapper {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow lebih tebal dan futuristik */
+        width: 100%;
+        max-width: 600px;
+        background: rgba(0, 0, 0, 0.6); /* Background gelap transparan */
+      }
+
+      /* Judul Utama */
+      .title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 36px;
+        font-weight: 500;
+        margin: 10px 0;
+        text-transform: uppercase;
+      }
+
+      /* Subtitle */
+      .subtitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        color: #ddd;
+        margin-bottom: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      /* Form Container */
+      .form-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .form-container h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      /* Tabel untuk menata form dengan jarak */
+      table {
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      table td {
+        padding: 10px 0;
+        vertical-align: middle;
+        text-align: left;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      .form-group select,
+      .form-group input {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1); /* Background transparan */
+        color: white;
+      }
+
+      /* Placeholder dengan warna cerah */
+      .form-group input::placeholder {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: #bbb;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        color: white;
+        background-color: #4b2e83; /* Warna ungu */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: #6a3b8b; /* Efek hover lebih terang */
+      }
+
+      /* Menambahkan informasi Owner dan Telegram link */
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #bbb;
+      }
+
+      /* Copyright section */
+      .copyright {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #bbb;
+      }
+
+      .copyright-icon {
+        margin-right: 5px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+
+      /* Membuat tampilan lebih responsif */
+      @media (max-width: 768px) {
+        .form-wrapper {
+          width: 90%; /* Lebar kontainer lebih kecil di layar mobile */
+          padding: 15px; /* Padding lebih kecil */
+        }
+
+        .title {
+          font-size: 28px; /* Ukuran font judul lebih kecil */
+        }
+
+        .subtitle {
+          font-size: 14px; /* Ukuran font subtitle lebih kecil */
+        }
+
+        .form-container h2 {
+          font-size: 16px; /* Ukuran font heading lebih kecil */
+        }
+
+        .form-group label {
+          font-size: 12px; /* Ukuran font label lebih kecil */
+        }
+
+        .form-group input, .form-group select {
+          font-size: 12px; /* Ukuran font input lebih kecil */
+          padding: 10px; /* Padding lebih kecil */
+        }
+
+        .btn {
+          font-size: 14px; /* Ukuran font tombol lebih kecil */
+          padding: 10px; /* Padding lebih kecil */
+        }
+
+        .footer {
+          font-size: 12px; /* Ukuran font footer lebih kecil */
+        }
+
+        .copyright {
+          font-size: 10px; /* Ukuran font copyright lebih kecil */
+        }
+      }
+
+      /* Notifikasi berhasil */
+      .notification {
+        display: none;
+        padding: 20px;
+        background-color: #4CAF50; /* Hijau terang untuk notifikasi sukses */
+        color: white;
+        font-size: 16px;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+    </style>
+    <script>
+      function showStep3() {
+        // Menyembunyikan Step 1 dan Step 2
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        
+        // Menampilkan Step 3
+        document.getElementById('step3').style.display = 'block';
+      }
+
+      function showSuccessNotification() {
+        // Menyembunyikan Step 3 dan menampilkan notifikasi
+        document.getElementById('step3').style.display = 'none';
+        const notification = document.getElementById('success-notification');
+        notification.style.display = 'block';
+        notification.style.opacity = 1;
+        
+        // Menyembunyikan notifikasi setelah 3 detik
+        setTimeout(function() {
+          notification.style.opacity = 0;
+          setTimeout(function() {
+            notification.style.display = 'none';
+          }, 500); // Setelah animasi selesai, sembunyikan notifikasi
+        }, 3000);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <!-- Logo diganti menjadi pepe.png -->
+        <img alt="Moonton logo" class="logo" height="100" src="pepe.png" width="100"/>
+        
+        <!-- Judul Utama -->
+        <div class="title">
+          TOOLS MOONTON BY VANZSKIEE
+        </div>
+        
+        <!-- Owner dan Link Telegram -->
+        <div class="footer">
+          <div>Owner: @vanzskiee</div>
+          <div>
+            Join Telegram: https://t.me/toolsytta
+          </div>
+        </div>
+        <br/>
+        <!-- Step 1 dan Step 2 dalam satu tabel -->
+        <div class="form-container" id="step1">
+          <h2>STEP 1: SEND CODE BY EMAIL</h2>
+          <table>
+            <tr>
+              <td class="form-group">
+                <label for="language">Pilih bahasa email</label>
+                <select id="language">
+                  <option>Pilih terlebih dahulu</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="form-group">
+                <label for="email">Masukkan email Moonton</label>
+                <input id="email" placeholder="email@gmail.com" type="email"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn" onclick="showStep3()">Kirim Kode</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="form-container" id="step2">
+          <h2>STEP 2: VERIFY CODE</h2>
+          <table>
+            <tr>
+              <td class="form-group">
+                <label for="verification-code">Masukkan kode verifikasi</label>
+                <input id="verification-code" placeholder="Kode verifikasi" type="number"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn" onclick="showStep3()">Verifikasi Kode</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-container" id="step3" style="display: none;">
+          <h2>STEP 3: VERIFY NEW EMAIL</h2>
+          <table>
+            <tr>
+              <td class="form-group">
+                <label for="new-email">Masukkan email baru</label>
+                <input id="new-email" placeholder="emailbaru@gmail.com" type="email"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn" onclick="showSuccessNotification()">Kirim Kode</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="form-group">
+                <label for="new-verification-code">Masukkan kode verifikasi baru</label>
+                <input id="new-verification-code" placeholder="Kode verifikasi baru" type="text"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn" onclick="showSuccessNotification()">Verifikasi Kode</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Notifikasi Sukses -->
+        <div class="notification" id="success-notification">
+          Email berhasil diganti!
+        </div>
+
+        <!-- Copyright section -->
+        <div class="copyright">
+          <span class="copyright-icon"><i class="fas fa-copyright"></i></span>
+          Copyright @vanzskiee
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
